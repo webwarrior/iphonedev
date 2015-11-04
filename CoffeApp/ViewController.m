@@ -52,6 +52,8 @@
     self.pictureImage.image = [UIImage imageNamed:@"Damien"];
     self.descriptionLabel.text = @"The best iOS developer!";
     
+    // Some test
+    
     
     NSURL *url = [NSURL URLWithString:@"http://www.myobexo.me/iphone/json.html"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
