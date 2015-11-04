@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *greetingId;
 @property (weak, nonatomic) IBOutlet UILabel *greetingContent;
 
+
+
 - (IBAction)calculateButtonPressed:(id)sender;
 
 @end
