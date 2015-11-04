@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImage;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *greetingId;
+@property (weak, nonatomic) IBOutlet UILabel *greetingContent;
 
 - (IBAction)calculateButtonPressed:(id)sender;
 

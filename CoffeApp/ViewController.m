@@ -51,5 +51,32 @@
     
     self.pictureImage.image = [UIImage imageNamed:@"Damien"];
     self.descriptionLabel.text = @"The best iOS developer!";
+    
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.myobexo.me/iphone/json.html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             NSDictionary *greeting = [NSJSONSerialization JSONObjectWithData:data
+                                                                      options:0
+                                                                        error:NULL];
+             
+             
+             
+             self.greetingId.text = [[greeting objectForKey:@"id"] stringValue];
+             self.greetingContent.text = [greeting objectForKey:@"content"];
+             
+             NSString *contentText = [NSString stringWithFormat:@"%@",self.greetingContent.text];
+             NSLog(@"Content: %@",contentText);
+             
+         }
+     }];
+    
+    
 }
 @end
